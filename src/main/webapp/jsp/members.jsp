@@ -9,7 +9,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-  private MemberRepository memberRepository = MemberRepository.getInstance();
+  MemberRepository memberRepository = MemberRepository.getInstance();
   List<Member> members = memberRepository.findAll();
 %>
 <html>
