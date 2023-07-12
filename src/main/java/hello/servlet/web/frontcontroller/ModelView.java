@@ -1,6 +1,9 @@
 package hello.servlet.web.frontcontroller;
 
+import hello.servlet.domain.member.Member;
+
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class ModelView {
@@ -25,5 +28,8 @@ public class ModelView {
 
     public void setModel(Map<String, Object> model) {
         this.model = model;
+    }
+
+    public void addObject(String members, List<Member> members1) {
     }
 }
