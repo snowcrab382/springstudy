@@ -1,14 +1,8 @@
-<%@ page import="hello.servlet.domain.member.Member" %>
-<%@ page import="hello.servlet.domain.member.MemberRepository" %><%--
-  Created by IntelliJ IDEA.
-  User: donghun
-  Date: 2023/07/06
-  Time: 12:55 PM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="hello.servlet.domain.member.Member" %>
+<%@ page import="hello.servlet.domain.member.MemberRepository" %>
 <%
-    //request, response는 따로 선언 없이 사용 가능
+    //request, response 사용 가능
     MemberRepository memberRepository = MemberRepository.getInstance();
 
     System.out.println("MemberSaveServlet.service");
@@ -17,6 +11,7 @@
 
     Member member = new Member(username, age);
     memberRepository.save(member);
+
 %>
 <html>
 <head>
@@ -25,9 +20,9 @@
 <body>
 성공
 <ul>
-    <li>id = <%= member.getId() %></li>
-    <li>username = <%= member.getUsername() %></li>
-    <li>age = <%= member.getAge() %></li>
+    <li>id=<%=member.getId()%></li>
+    <li>username=<%=member.getUsername()%></li>
+    <li>age=<%=member.getAge()%></li>
 </ul>
 <a href="/index.html">메인</a>
 </body>
