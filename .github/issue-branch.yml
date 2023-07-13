@@ -1,0 +1,7 @@
+branchName: '${issue.number}'
+branches:
+  - label: 'documentation'
+    prefix: doc/
+  - label: 'bug'
+    prefix: bug/
+autoCloseIssue: true
