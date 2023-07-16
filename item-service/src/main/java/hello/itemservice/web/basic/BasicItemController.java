@@ -57,20 +57,27 @@ public class BasicItemController {
 
 //    @PostMapping("/add")
     public String addItemV2(@ModelAttribute("item") Item item, Model model) {
-
         itemRepository.save(item);
-
 //        model.addAttribute("item", item); //자동 추가,생략 가능
+        return "basic/item";
+    }
 
+//    @PostMapping("/add")
+    public String addItemV3(@ModelAttribute Item item, Model model) {
+        itemRepository.save(item);
+        return "basic/item";
+    }
+
+//    @PostMapping("/add")
+    public String addItemV4(Item item, Model model) {
+        itemRepository.save(item);
         return "basic/item";
     }
 
     @PostMapping("/add")
-    public String addItemV3(@ModelAttribute Item item, Model model) {
-
+    public String addItemV5(Item item, Model model) {
         itemRepository.save(item);
-
-        return "basic/item";
+        return "redirect:/basic/items/" + item.getId();
     }
 
     @GetMapping("/{itemId}/edit")
